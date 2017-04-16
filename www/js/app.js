@@ -24,31 +24,48 @@ angular
       .state('tab', {
         url: '',
         abstract: true,
-        templateUrl: 'templates/tabs.html'
+        templateUrl: 'templates/tabs.html',
+        controller: 'IndexCtrl'
       })
 
       .state('tab.homePage', {
         url: '/',
+        views: {
+          'homePage': {
           templateUrl: 'templates/home.html',
           controller: 'HomeCtrl'
+          }
+        }
       })
 
       .state('tab.information', {
         url: '/information',
+        views: {
+          'information': {
             templateUrl: 'templates/information.html',
             controller: 'InformationCtrl'
+          }
+        }
       })
 
       .state('tab.activities', {
         url: '/activities',
+        views: {
+          'activities': {
             templateUrl: 'templates/activities.html',
             controller: 'ActivitiesCtrl'
+          }
+        }
       })
 
       .state('tab.login', {
         url: '/login',
+        views: {
+          'login': {
             templateUrl: 'templates/login.html',
             controller: 'LoginCtrl'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');
