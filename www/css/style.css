@@ -1,1 +1,25 @@
-/* Empty. Add your own CSS if you like */
+h2 {
+    text-align: center;
+}
+
+.start {
+    font-size: 40px;
+    height: 30vh;
+    border-radius: 25px;
+}
+
+.col {
+    text-align: center;
+}
+
+.bottom-buttons {
+    margin-top: 5vh;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button {
+    width: 95%;
+}
