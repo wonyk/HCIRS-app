@@ -1,4 +1,5 @@
-h2 {
+h2,
+h5 {
     text-align: center;
 }
 
@@ -24,4 +25,20 @@ h2 {
     width: 99%;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.list .item.item-accordion {
+    line-height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
 }

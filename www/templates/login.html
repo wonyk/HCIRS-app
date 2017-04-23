@@ -1,17 +1,18 @@
 <ion-view view-title="Account">
     <ion-content>
-        <ion-list>
-
-            <ion-item>
-                <ion-label stacked>Username</ion-label>
-                <ion-input type="text"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label stacked>Password</ion-label>
-                <ion-input type="password"></ion-input>
-            </ion-item>
-
-        </ion-list>
+        <h2>Login</h2>
+        <form name="signin" novalidate>
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email" ng-model="user.email" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                <input type="password" placeholder="Password" ng-model="user.password" required>
+                </label>
+            </div>
+        </form>
+        <button class="button button-block button-calm" ng-click="login()" ng-disabled="signin.$invalid">Login</button>
     </ion-content>
 </ion-view>

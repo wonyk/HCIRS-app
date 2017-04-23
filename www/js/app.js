@@ -51,6 +51,15 @@ angular
                         templateUrl: 'templates/settings.html',
                         controller: 'settingsCtrl'
                     }
+                },
+                resolve: {
+                    'AuthStatus': function ($firebaseAuth) {
+                        return $firebaseAuth().$waitForSignIn()
+                            .then(function (user) {
+                                return user;
+                            });
+                    }
+
                 }
             })
 
@@ -64,14 +73,10 @@ angular
                 }
             })
 
-            .state('tab.login', {
+            .state('login', {
                 url: '/login',
-                views: {
-                    'login': {
-                        templateUrl: 'templates/login.html',
-                        controller: 'LoginCtrl'
-                    }
-                }
+                templateUrl: 'templates/login.html',
+                controller: 'LoginCtrl'
             });
 
         $urlRouterProvider.otherwise('/');

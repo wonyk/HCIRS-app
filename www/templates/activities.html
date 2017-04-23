@@ -1,5 +1,14 @@
 <ion-view view-title="Capture the {FLAGS}">
-  <ion-content>
-    
-  </ion-content>
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="level in levels">
+                <ion-item class="item-stable" ng-click="toggleLevel(level)" ng-class="{active: isLevelShown(level)}">
+                    <i class="icon" ng-class="isLevelShown(level) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; {{level.name}}
+                </ion-item>
+                <ion-item class="item-accordion" ng-repeat="item in level.items" ng-show="isLevelShown(level)">
+                    {{item}}
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
 </ion-view>
