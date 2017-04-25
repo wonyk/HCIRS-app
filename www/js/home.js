@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('hcgc-app')
+        .module('hcirs-app')
         .controller('HomeCtrl', HomeCtrl);
 
     HomeCtrl.$inject = ['$scope'];

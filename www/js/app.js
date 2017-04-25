@@ -1,5 +1,5 @@
 angular
-    .module('hcgc-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase'])
+    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information'])
 
     .config(function ($ionicCloudProvider) {
         $ionicCloudProvider.init({
@@ -77,6 +77,44 @@ angular
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
+            })
+
+            .state('schedule', { //Work on customised settings for notifications
+                url: '/schedule',
+                templateUrl: 'templates/schedule.html'
+            })
+
+            .state('info-tab', {
+                url: '/information',
+                templateUrl: 'templates/information-tab.html'
+            })
+            
+            .state('info-tab.main', {
+                url: '/main',
+                views: {
+                    'main': {
+                        templateUrl: 'templates/main.html'
+                    }
+                }
+            })
+
+            .state('info-tab.academics', {
+                url: '/academics',
+                views: {
+                    'academics': {
+                        templateUrl: 'templates/academics.html'
+                    }
+                }
+            })
+
+            .state('info-tab.cca', {
+                url: '/cca',
+                views: {
+                    'cca': {
+                        templateUrl: 'templates/cca.html',
+                        controller: 'ccaCtrl'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');

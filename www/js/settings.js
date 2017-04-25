@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('hcgc-app')
+        .module('hcirs-app')
         .controller('settingsCtrl', settingsCtrl);
 
     settingsCtrl.$inject = ['$scope', '$firebaseAuth', 'AuthStatus', '$state'];

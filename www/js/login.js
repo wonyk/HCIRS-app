@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('hcgc-app')
+        .module('hcirs-app')
         .controller('LoginCtrl', LoginCtrl);
 
     LoginCtrl.$inject = ['$scope', '$firebaseAuth', '$ionicSideMenuDelegate', '$state'];

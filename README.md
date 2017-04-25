@@ -4,12 +4,4 @@ This app is developed in [IONIC](https://ionicframework.com/) version 1 and Angu
 
 I hope that this app could be beneficial to anyone out there who hope to build apps in rapid speed.
 
-## Todo List:
-
-- [ ] Clone the old Open House App
-
-- [ ] Make the designs better
-
-- [ ] Integrate beacons into it
-
-- [ ] More...
+Thanks to Ragul and Jie Feng's effort in generating the JSON for me to use in the app.

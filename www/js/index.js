@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('hcgc-app')
+        .module('hcirs-app')
         .controller('IndexCtrl', IndexCtrl);
 
     IndexCtrl.$inject = ['$scope', '$ionicSideMenuDelegate'];
