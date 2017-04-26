@@ -6,7 +6,7 @@
     ccaCtrl.$inject = ['$scope', 'Information'];
 
     function ccaCtrl($scope, Information) {
-        $scope.ccas = Information.cca();
+        $scope.ccas =Information.cca();
     }
 
 })();

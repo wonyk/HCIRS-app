@@ -42,3 +42,7 @@ h5 {
 .list .item.item-accordion.ng-hide-remove {
     display: block !important;
 }
+
+.nowrap {
+    white-space: normal !important;
+}
