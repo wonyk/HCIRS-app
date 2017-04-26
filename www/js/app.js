@@ -1,5 +1,5 @@
 angular
-    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information'])
+    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information', 'hcirs-app.game-levels'])
 
     .config(function ($ionicCloudProvider) {
         $ionicCloudProvider.init({
