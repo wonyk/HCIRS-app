@@ -1,7 +1,7 @@
 <ion-view view-title="Settings">
     <ion-content class="padding">
         <!-- For unauthed people, obviously -->
-        <div ng-if="!Authed">
+        <div ng-if="!firebaseUser">
             <h2 class="center">Sign Up Now!</h2>
             <form name="loginUser" novalidate>
                 <div class="list">
@@ -31,13 +31,13 @@
 
         </div>
         <!-- For authed people -->
-        <div ng-if="Authed">
+        <div ng-if="firebaseUser">
             <div class="list">
 
                 <li class="item item-icon-left item-toggle">
                     <i class="icon ion-android-notifications"></i> Notifications
                     <label class="toggle">
-                    <input type="checkbox" ng-checked="true">
+                    <input type="checkbox" ng-checked="settings.notifications">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -46,7 +46,7 @@
 
                 <a class="item item-icon-left" href="#">
                     <i class="icon ion-images"></i> Photos
-                    <span class="badge badge-assertive">0</span>
+                    <span class="badge badge-assertive">{{settings.photos}}</span>
                 </a>
 
             </div>

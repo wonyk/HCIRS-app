@@ -21,8 +21,9 @@ h5 {
     justify-content: space-around;
 }
 
-.button {
+.start-but {
     width: 99%;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }

@@ -7,13 +7,19 @@
                 name: 'Lv 1',
                 items: [{
                     name: "Beginner's Luck",
-                    link: "more"
+                    answer: ''
                 }, {
                     name: "It's getting harder"
                 }]
             }, {
                 name: 'Lv 2',
                 items: ['Nothing to see']
+            }, {
+                name: 'Final Level',
+                items: []
+            }, {
+                name: 'Misc',
+                items: []
             }];
 
             return {

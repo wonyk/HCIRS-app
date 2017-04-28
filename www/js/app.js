@@ -1,5 +1,5 @@
 angular
-    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information', 'hcirs-app.game-levels'])
+    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information', 'hcirs-app.game-levels', 'hcirs-app.settings'])
 
     .config(function ($ionicCloudProvider) {
         $ionicCloudProvider.init({
@@ -51,15 +51,6 @@ angular
                         templateUrl: 'templates/settings.html',
                         controller: 'settingsCtrl'
                     }
-                },
-                resolve: {
-                    'AuthStatus': function ($firebaseAuth) {
-                        return $firebaseAuth().$waitForSignIn()
-                            .then(function (user) {
-                                return user;
-                            });
-                    }
-
                 }
             })
 
@@ -88,7 +79,7 @@ angular
                 url: '/information',
                 templateUrl: 'templates/information-tab.html'
             })
-            
+
             .state('info-tab.main', {
                 url: '/main',
                 views: {

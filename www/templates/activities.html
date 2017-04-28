@@ -5,7 +5,7 @@
                 <ion-item class="item-stable" ng-click="toggleLevel(level)" ng-class="{active: isLevelShown(level)}">
                     <i class="icon" ng-class="isLevelShown(level) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; {{level.name}}
                 </ion-item>
-                <ion-item class="item-accordion" ng-repeat="item in level.items" ng-show="isLevelShown(level)" ng-click="modal.show()">
+                <ion-item class="item-accordion" ng-repeat="item in level.items" ng-show="isLevelShown(level)" ng-click="openModal(item)">
                     {{item.name}}
                 </ion-item>
             </div>

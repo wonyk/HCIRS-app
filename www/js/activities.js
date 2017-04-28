@@ -1,4 +1,4 @@
-(function() {
+(function () {
     angular
         .module('hcirs-app')
         .controller('ActivitiesCtrl', ActivitiesCtrl);
@@ -8,42 +8,47 @@
     function ActivitiesCtrl($scope, Levels, $ionicModal) {
         $scope.levels = Levels.all();
 
-        $scope.toggleLevel = function(level) {
+        $scope.toggleLevel = function (level) {
             if ($scope.isLevelShown(level)) {
                 $scope.shownLevel = null;
-            }
-            else {
+            } else {
                 $scope.shownLevel = level;
             }
         };
-        $scope.isLevelShown = function(level) {
+        $scope.isLevelShown = function (level) {
             return $scope.shownLevel === level;
         };
-        
-        $ionicModal.fromTemplateUrl('templates/more.html', {
+
+        $ionicModal.fromTemplateUrl('templates/modal.html', {
             scope: $scope,
             animation: 'slide-in-up'
-        }).then(function(modal) {
+        }).then(function (modal) {
             $scope.modal = modal;
         });
-        $scope.openModal = function() {
+        $scope.openModal = function (item) {
+            $scope.details = item;
             $scope.modal.show();
         };
-        $scope.closeModal = function() {
+        $scope.closeModal = function () {
             $scope.modal.hide();
         };
         // Cleanup the modal when we're done with it!
-        $scope.$on('$destroy', function() {
+        $scope.$on('$destroy', function () {
             $scope.modal.remove();
         });
         // Execute action on hide modal
-        $scope.$on('modal.hidden', function() {
+        $scope.$on('modal.hidden', function () {
             // Execute action
         });
         // Execute action on remove modal
-        $scope.$on('modal.removed', function() {
+        $scope.$on('modal.removed', function () {
             // Execute action
         });
+
+        $scope.submitFlag = function (answer) {
+            console.log(answer);
+            $scope.modal.hide();
+        };
     }
 
 })();
