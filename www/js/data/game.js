@@ -18,7 +18,11 @@
                 name: 'Final Level',
                 items: []
             }, {
-                name: 'Misc',
+                name: 'Kamikaze',
+                items: []
+            },
+            {
+                name: 'Timed Challenge',
                 items: []
             }];
 

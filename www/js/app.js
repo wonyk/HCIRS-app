@@ -77,7 +77,8 @@ angular
 
             .state('info-tab', {
                 url: '/information',
-                templateUrl: 'templates/information-tab.html'
+                templateUrl: 'templates/information-tab.html',
+                controller: 'IndexCtrl'
             })
 
             .state('info-tab.main', {
@@ -89,11 +90,12 @@ angular
                 }
             })
 
-            .state('info-tab.academics', {
-                url: '/academics',
+            .state('info-tab.faculty', {
+                url: '/faculty',
                 views: {
-                    'academics': {
-                        templateUrl: 'templates/academics.html'
+                    'faculty': {
+                        templateUrl: 'templates/faculty.html',
+                        controller: 'FacCtrl'
                     }
                 }
             })

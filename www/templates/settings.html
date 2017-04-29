@@ -49,6 +49,10 @@
                     <span class="badge badge-assertive">{{settings.photos}}</span>
                 </a>
 
+                <label class="item item-input">
+                    <input type="text" placeholder="First Name" ng-model="settings.name">
+                </label>
+
             </div>
             <button class="button button-full button-positive" ng-click="authObj.$signOut()">
               Sign out..

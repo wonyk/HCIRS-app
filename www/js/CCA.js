@@ -3,10 +3,14 @@
         .module('hcirs-app')
         .controller('ccaCtrl', ccaCtrl);
 
-    ccaCtrl.$inject = ['$scope', 'Information'];
+    ccaCtrl.$inject = ['$scope', 'Information', '$ionicLoading'];
 
-    function ccaCtrl($scope, Information) {
-        $scope.ccas =Information.cca();
+    function ccaCtrl($scope, Information, $ionicLoading) {
+        $scope.ccas = Information.cca();
+        $ionicLoading.show({
+            duration: 1500,
+            template: '<p>Loading...</p><ion-spinner></ion-spinner>'
+        });
     }
 
 })();

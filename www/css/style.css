@@ -47,3 +47,7 @@ h5 {
 .nowrap {
     white-space: normal !important;
 }
+
+.stretch {
+    height: 100vh !important;
+}
