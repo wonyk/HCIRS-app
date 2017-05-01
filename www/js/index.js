@@ -3,10 +3,9 @@
         .module('hcirs-app')
         .controller('IndexCtrl', IndexCtrl);
 
-    IndexCtrl.$inject = ['$scope', '$ionicSideMenuDelegate'];
+    IndexCtrl.$inject = ['$scope'];
 
-    function IndexCtrl($scope, $ionicSideMenuDelegate) {
-        $ionicSideMenuDelegate.edgeDragThreshold('true'); //Tab is the immediate parent
+    function IndexCtrl($scope) {
     }
 
 })();

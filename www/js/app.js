@@ -18,7 +18,8 @@ angular
             }
             if (window.StatusBar) {
                 // org.apache.cordova.statusbar required
-                StatusBar.styleDefault();
+                StatusBar.overlaysWebView(false);
+                StatusBar.backgroundColorByHexString('#3b6cbe');
             }
         });
     })
@@ -27,11 +28,11 @@ angular
 
         $stateProvider
             // setup an abstract state for the tabs directive
+            // Index.js reserved for something else..
             .state('tab', {
                 url: '',
                 abstract: true,
-                templateUrl: 'templates/tabs.html',
-                controller: 'IndexCtrl'
+                templateUrl: 'templates/tabs.html'
             })
 
             .state('tab.homePage', {
@@ -70,15 +71,14 @@ angular
                 controller: 'LoginCtrl'
             })
 
-            .state('schedule', { //Work on customised settings for notifications
+            .state('schedule', {
                 url: '/schedule',
                 templateUrl: 'templates/schedule.html'
             })
 
             .state('info-tab', {
                 url: '/information',
-                templateUrl: 'templates/information-tab.html',
-                controller: 'IndexCtrl'
+                templateUrl: 'templates/information-tab.html'
             })
 
             .state('info-tab.main', {
@@ -108,6 +108,27 @@ angular
                         controller: 'ccaCtrl'
                     }
                 }
+            })
+
+            .state('maps', {
+                url: '/map',
+                templateUrl: 'templates/map.html',
+                controller: 'mapCtrl'
+            })
+
+            .state('guide', {
+                url: '/guide',
+                templateUrl: 'templates/guide.html'
+            })
+
+            .state('credits', {
+                url: '/about',
+                templateUrl: 'templates/about.html'
+            })
+            
+            .state('instructions', {
+                url: '/instructions',
+                templateUrl: 'templates/help.html'
             });
 
         $urlRouterProvider.otherwise('/');

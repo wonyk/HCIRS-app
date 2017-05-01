@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('hcirs-app')
-        .run(['$rootScope', '$ionicLoading', '$state', function ($rootScope, $ionicLoading) {
+        .run(['$rootScope', '$ionicLoading', '$ionicSideMenuDelegate', function ($rootScope, $ionicLoading, $ionicSideMenuDelegate) {
 
             $rootScope.$on('$stateChangeStart',
                 function (event, toState, toParams, fromState, fromParams) {
@@ -14,6 +14,10 @@
                 function (event, toState, toParams, fromState, fromParams) {
                     $ionicLoading.hide();
                 });
+
+            $rootScope.$on('$ionicView.enter', function () {
+                $ionicSideMenuDelegate.edgeDragThreshold('true');
+            });
 
         }]);
 

@@ -3,9 +3,9 @@
         .module('hcirs-app')
         .controller('ccaCtrl', ccaCtrl);
 
-    ccaCtrl.$inject = ['$scope', 'Information', '$ionicLoading'];
+    ccaCtrl.$inject = ['$scope', 'Information', '$ionicLoading', '$ionicPopover'];
 
-    function ccaCtrl($scope, Information, $ionicLoading) {
+    function ccaCtrl($scope, Information, $ionicLoading, $ionicPopover) {
         $scope.ccas = Information.cca();
         $ionicLoading.show({
             duration: 1500,

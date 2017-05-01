@@ -3,9 +3,14 @@
         .module('hcirs-app')
         .controller('FacCtrl', FacCtrl);
 
-    FacCtrl.$inject = ['$scope'];
+    FacCtrl.$inject = ['$scope', '$ionicPopup'];
 
-    function FacCtrl($scope) {
+    function FacCtrl($scope, $ionicPopup) {
+        $ionicPopup.alert({
+            title: 'Swipe to view',
+            template: 'Swipe left and right to view the various faculties'
+        });
+
         $scope.options = {
             loop: false,
             effect: 'fade'

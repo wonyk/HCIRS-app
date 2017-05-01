@@ -1,0 +1,35 @@
+<ion-view view-title="Getting there">
+    <ion-content>
+        <div class="list card">
+            <div class="item">
+                <h2>Hwa Chong Institution</h2>
+                <p>661 Bukit Timah Road</p>
+            </div>
+
+            <div class="item item-image" ng-click="openModal()">
+                <img src="img/misc/map1.jpg">
+            </div>
+
+            <a class="item item-icon-left assertive" ng-click="directions()">
+                <i class="icon ion-ios-navigate"></i> Get Directions
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
+
+<script id="templates/mapView.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+            <h1 class="title">Zoom and View Map</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Close</button>
+        </ion-header-bar>
+        <ion-content class="padding" scroll="false">
+
+            <ion-scroll zooming="true" direction="xy" delegate-handle="zoom-pane" class="zoom-pane" min-zoom="1" scrollbar-x="false"
+                scrollbar-y="false" overflow-scroll="false">
+                <img src="img/misc/map1.jpg">
+            </ion-scroll>
+
+        </ion-content>
+    </ion-modal-view>
+</script>

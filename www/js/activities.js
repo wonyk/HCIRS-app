@@ -36,14 +36,6 @@
         $scope.$on('$destroy', function () {
             $scope.modal.remove();
         });
-        // Execute action on hide modal
-        $scope.$on('modal.hidden', function () {
-            // Execute action
-        });
-        // Execute action on remove modal
-        $scope.$on('modal.removed', function () {
-            // Execute action
-        });
 
         $scope.submitFlag = function (answer) {
             console.log(answer);
