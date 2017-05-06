@@ -113,12 +113,13 @@ angular
             .state('maps', {
                 url: '/map',
                 templateUrl: 'templates/map.html',
-                controller: 'mapCtrl'
+                controller: 'mapCtrl' //in misc
             })
 
             .state('guide', {
                 url: '/guide',
-                templateUrl: 'templates/guide.html'
+                templateUrl: 'templates/guide.html',
+                controller: 'guideCtrl' //in misc
             })
 
             .state('credits', {

@@ -1,0 +1,54 @@
+<ion-view view-title="Tour Guide 101">
+    <ion-content scroll="false">
+        <ion-slides options="options" slider="data.slider" ng-if="!locs">
+            <ion-slide-page>
+                <img class="full-image" src="img/misc/map2.jpg" ng-click="openModal()" />
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Pls enable Location permissions. Walk to the nearest beacon to see magic happen.
+                    </div>
+                </div>
+                <button class="button button-full button-positive" ng-click="startGuide()" ng-show="!started">
+                    Enable Bluetooth, Loc & START
+                </button>
+                <button class="button button-full button-positive" ng-click="reset()" ng-show="started">
+                    End Guide
+                </button>
+            </ion-slide-page>
+        </ion-slides>
+
+        <ion-slides options="options" slider="data.slider" ng-if="locs">
+            <ion-slide-page ng-repeat="loc in locs">
+                <img class="full-image" src="{{loc.picture}}"  ng-click="openModal(loc.picture)" />
+                <div class="card">
+                    <div class="item item-divider">
+                        {{loc.title}}
+                    </div>
+                    <div class="item item-text-wrap">
+                        {{loc.content}}
+                    </div>
+                </div>
+            </ion-slide-page>
+        </ion-slides>
+        <div class="bar bar-footer bar-balanced" ng-click="reset()" ng-show="locs">
+            <div class="title">Back to Instructions</div>
+        </div>
+
+    </ion-content>
+</ion-view>
+
+
+<script id="templates/imgView.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-content class="padding dark" scroll="false">
+            <div class="bar bar-header bar-dark">
+                <button class="button button-clear icon ion-close-round" ng-click="modal.hide()"></button>
+            </div>
+            <ion-scroll zooming="true" direction="xy" delegate-handle="zoom-pane" class="zoom-pane" min-zoom="1" scrollbar-x="false"
+                scrollbar-y="false" overflow-scroll="false">
+                <img src="{{picture}}" on-double-tap="zoom()">
+            </ion-scroll>
+
+        </ion-content>
+    </ion-modal-view>
+</script>

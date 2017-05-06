@@ -25,9 +25,9 @@
 
     <!-- ionic/angularjs js and also firebase -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/ionic.native.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-    <script src="lib/ionic/js/ionic.native.js"></script>
     <script src="lib/ionic/js/ionic.cloud.min.js"></script>
     <script src="js/api.js"></script>
 
@@ -55,6 +55,7 @@
     <script src="js/settings.js"></script>
     <script src="js/CCA.js"></script>
     <script src="js/misc.js"></script>
+    <script src="js/guide.js"></script>
     <script src="js/general.js"></script>
     <script src="js/faculty.js"></script>
     <script src="js/data/information.js"></script>
@@ -74,11 +75,10 @@
             <ion-content class="has-header">
                 <ion-list>
                     <ion-item class="item item-divider">Main</ion-item>
-                    <ion-item class="item item-icon-left" href="#/" menu-close><i class="icon ion-home"></i>Home</ion-item>
                     <ion-item class="item item-icon-left" href="#/activities" menu-close><i class="icon ion-flag"></i>Capture the {Flag}</ion-item>
                     <ion-item class="item item-icon-left" href="#/schedule" menu-close><i class="icon ion-calendar"></i>Activities / Schedule</ion-item>
                     <ion-item class="item item-icon-left" href="#/leaderboard" menu-close><i class="icon ion-ribbon-b"></i>Rankings</ion-item>
-                    <ion-item class="item item-icon-left" href="#/tour" menu-close><i class="icon ion-ios-navigate"></i>Tour Guide</ion-item>
+                    <ion-item class="item item-icon-left" href="#/guide" menu-close><i class="icon ion-ios-navigate"></i>Tour Guide</ion-item>
                     <ion-item class="item item-icon-left" href="#/information/main" menu-close><i class="icon ion-ios-information"></i>Information</ion-item>
                     <ion-item class="item item-divider">Utility</ion-item>
                     <ion-item class="item item-icon-left" href="#/settings" menu-close><i class="icon ion-gear-a"></i>Settings</ion-item>
@@ -94,6 +94,9 @@
             <ion-nav-bar class="bar-positive">
                 <ion-nav-buttons side="left">
                     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+                </ion-nav-buttons>
+                <ion-nav-buttons side="right">
+                    <a href="#/"><button class="button button-icon icon ion-home"></button></a>
                 </ion-nav-buttons>
             </ion-nav-bar>
             <ion-nav-view animation="slide-left-right"></ion-nav-view>

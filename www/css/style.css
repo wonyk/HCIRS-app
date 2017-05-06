@@ -106,3 +106,18 @@ h5 {
 .white {
     color: white;
 }
+
+.inAppBrowserWrap {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgba(235, 235, 235, 1.0);
+}
+
+.guide {
+    width: 100vw;
+    height: 80vh !important;
+    margin-bottom: 80vh;
+}
+
+.dark {
+    background: #444;
+}

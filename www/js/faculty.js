@@ -17,7 +17,6 @@
         };
 
         $scope.$on("$ionicSlides.sliderInitialized", function (event, data) {
-            // data.slider is the instance of Swiper
             $scope.slider = data.slider;
         });
 
