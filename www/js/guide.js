@@ -65,7 +65,7 @@
         $scope.startGuide = function () {
 
             //Check location settings
-            $cordovaLocationAccuracy.request('2')
+            $cordovaLocationAccuracy.request('3')
                 .then(function (data, err) {
                     $scope.started = true;
                     if (err) {
@@ -96,6 +96,7 @@
 
             $scope.locs = null; //Initial state
 
+            //Monitor for each region. If enter, call the delegate function
             $cordovaIBeacon.startMonitoringForRegion(BlockCD)
                 .then(function (data, err) {
                     if (err) {
@@ -136,6 +137,7 @@
                     }
                 });
 
+            //delegate to handle the enter region stuff to give suitable content
             delegate.didEnterRegion()
                 .subscribe(function (data, error) {
                     $ionicLoading.show({
@@ -169,7 +171,6 @@
             delegate.didExitRegion()
                 .subscribe(function (data, error) {
                     if (data) {
-                        console.log(JSON.stringify(data));
                         $scope.locs = null;
                         $scope.$apply();
                     }
@@ -182,7 +183,7 @@
                 });
         };
 
-        //Reset button at the bottom.
+        //Reset button at the bottom. Click to end all monitoring.
 
         $scope.reset = function () {
             $scope.started = false;

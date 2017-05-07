@@ -256,7 +256,7 @@
                 {
                     fullname:"Ultimate Frisbee",
                     content:"Ultimate Frisbee is a non-contact sport played between 2 teams of 7 players on a large rectangular pitch.",
-                    img:"img/ccas/sports/ultimate.png",
+                    img:"img/ccas/sports/ultimate.jpg",
                     searchtags:"ULTIMATE FRISBEE  Ultimate Frisbee"
                 },
                 {
