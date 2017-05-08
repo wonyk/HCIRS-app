@@ -4,12 +4,27 @@
         <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
     </ion-header-bar>
     <ion-content class="padding">
+        <!--<img class="full-image" src="{{details.img}}" />-->
+        <div class="card">
+            <div class="item">
+                <h2>Points</h2>
+                <p>{{details.score}}</p>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" src="{{details.img}}">
+                <p>
+                    {{details.description}}
+                </p>
+            </div>
+            <div class="item item-divider nowrap" style="text-align: center;">
+                Hint: {{details.hint}}
+            </div>
+        </div>
         <div class="list">
             <label class="item item-input">
-              <span class="input-label">Flag:</span>
-              <input ng-model="details.answer" type="text">
+                <input type="text" placeholder="Enter the Flag here">
             </label>
-            <button class="button button-full button-positive" ng-click="submitFlag(details.answer)">Create</button>
+            <button class="button button-full button-positive" ng-click="submitFlag(details.answer)">Submit</button>
         </div>
     </ion-content>
 </ion-modal-view>
