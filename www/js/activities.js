@@ -3,10 +3,11 @@
         .module('hcirs-app')
         .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-    ActivitiesCtrl.$inject = ['$scope', 'Levels', '$ionicModal'];
+    ActivitiesCtrl.$inject = ['$scope', 'Level', '$ionicModal', 'Answer', '$ionicLoading', '$ionicPopup'];
 
-    function ActivitiesCtrl($scope, Levels, $ionicModal) {
-        $scope.levels = Levels.all();
+    function ActivitiesCtrl($scope, Level, $ionicModal, Answer, $ionicLoading, $ionicPopup) {
+        $scope.levels = Level;
+        $scope.answers = Answer;
 
         $scope.toggleLevel = function (level) {
             if ($scope.isLevelShown(level)) {
@@ -37,9 +38,21 @@
             $scope.modal.remove();
         });
 
-        $scope.submitFlag = function (answer) {
-            console.log(answer);
-            $scope.modal.hide();
+        $scope.submitFlag = function (answer, id) {
+            var flag = $scope.answers[id - 1].flag;
+            if (answer == flag) {
+                $ionicPopup.alert({
+                    title: 'Congrats',
+                    template: 'You got the {flag} right! Continue striving!'
+                }).then(function (res) {
+                    $scope.modal.hide();
+                });
+            } else {
+                $ionicPopup.alert({
+                    title: 'Oops...',
+                    template: 'Wrong {flag}. Try again!'
+                });
+            }
         };
     }
 

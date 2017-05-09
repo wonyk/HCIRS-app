@@ -8,7 +8,7 @@
                 items: [{
                     name: "Beginner's Luck",
                     description: 'If you do not know what to do, you should always seek for a clue.',
-                    hint: 'Well, you are lucky. Here\'s the flag: {ThANks4U5ing-0UR-APP}',
+                    hint: 'Well, you are lucky. Here\'s the {flag}: {ThANks4U5ing-0UR-APP}',
                     score: '15',
                     img: 'img/game/ctf.jpg',
                     id: '1',
@@ -21,7 +21,7 @@
                     id: '2'
                 }, {
                     name: 'Knowledge is King',
-                    description: 'Get familiar with everything about Hwa Chong. There are 2 parts to this {flag}',
+                    description: 'Get familiar with everything about Hwa Chong and this app. There are 2 parts to this {flag}',
                     hint: 'READING is the KEY to KNOWLEDGE.',
                     score: '35',
                     img: 'img/game/ctf.jpg',
@@ -45,21 +45,21 @@
                 name: 'Lv 2',
                 items: [{
                     name: 'ICT quiz 2 - I Luv Pi',
-                    description: 'What is my favourite pie? Hawaiian? Key in the answers in full CAPS as flag',
+                    description: 'What is my favourite pie? Hawaiian? Key in the answers in full CAPS as {flag}',
                     hint: 'R _ _ P _ _ R _ _',
                     score: '130',
                     img: 'img/game/ctf.jpg',
                     id: '6'
                 }, {
                     name: 'Treasure Hunt 1',
-                    description: 'Find this place, the flga is hidden somewhere there...',
-                    hint: 'NOTHING',
+                    description: 'Find this place, the {flag} is hidden somewhere there...',
+                    hint: 'Level 1',
                     score: '100',
                     img: 'img/game/Audi.jpg',
                     id: '7'
                 }, {
                     name: 'ICT quiz 3 - Frameworks',
-                    description: 'Which javascript framework is this APP built upon? Key in the answers in full CAPS as flag',
+                    description: 'Which javascript framework is this APP built upon? Key in the answers in full CAPS as {flag}',
                     hint: '_ N _ _ _ A _ _ S',
                     score: '130',
                     img: 'img/game/ctf.jpg',
@@ -76,15 +76,15 @@
                 name: 'Final Level',
                 items: [{
                     name: 'Treasure Hunt 2',
-                    description: 'Find this place, the flag is hidden somewhere there...',
-                    hint: 'NOTHING',
+                    description: 'Find this place, the {flag} is hidden somewhere there...',
+                    hint: 'Level 2',
                     score: '150',
-                    img: 'img/game/HallOfFame.jpg', //CUSTOM
+                    img: 'img/game/HallOfFame.jpg',
                     id: '10'
                 }, {
                     name: 'RUNNING MAN',
-                    description: 'Tour the school using our tour guide function, there will be 4 parts to this flag',
-                    hint: '1 part of the flag in each section of the school',
+                    description: 'Tour the school using our tour guide function, there will be 4 parts to this {flag}',
+                    hint: '1 part of the {flag} in each section of the school',
                     score: '500',
                     img: 'img/game/ctf.jpg',
                     id: '11'
@@ -107,21 +107,21 @@
                 name: 'Kamikaze',
                 items: [{
                     name: 'Speak UP',
-                    description: 'Social engineer our CCA members to get the flag',
+                    description: 'Social engineer our CCA members to get the {flag}',
                     hint: 'Ask useful questions.',
                     score: '100',
                     img: 'img/game/ctf.jpg',
                     id: '14'
                 }, {
                     name: 'Showcase your vocals',
-                    description: 'Sing at Hwa Chong\'s central plaza stage for the flag - Only 1 up for grab @ 13 30 hours',
+                    description: 'Sing at Hwa Chong\'s central plaza stage for the {flag} - Only 2 up for grab @ 13 30 hours',
                     hint: 'Just be daring and approach HCIRS to plan for your slot',
                     score: '400',
                     img: 'img/game/ctf.jpg',
                     id: '15'
                 }, {
                     name: 'Display your skillz',
-                    description: 'Mimick a short sample dance by MAD to obtain your flag - Only 1 up for grab @ 14 00 hours',
+                    description: 'Mimick a short sample dance by MAD to obtain your {flag} - Only 2 up for grab @ 14 00 hours',
                     hint: 'Similar to singing, approach HCIRS to plan for a slot',
                     score: '400',
                     img: 'img/game/ctf.jpg',
@@ -133,7 +133,7 @@
                 items: [{
                     name: 'I, Social Media',
                     description: 'Post a short dance video of you / with friends shouting: "Hwa Chong Open House is the BEST!"',
-                    hint: 'Come to HCIRS to verify to redeem your flag',
+                    hint: 'Come to HCIRS to verify to redeem your {flag}',
                     score: '200',
                     img: 'img/game/ctf.jpg',
                     id: '17'
@@ -148,7 +148,7 @@
             }];
 
             return {
-                all: function() {
+                all: function () {
                     return game;
                 }
             };

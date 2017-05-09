@@ -1,5 +1,5 @@
 angular
-    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information', 'hcirs-app.game-levels', 'hcirs-app.settings'])
+    .module('hcirs-app', ['ionic', 'ionic.native', 'ionic.cloud', 'firebase', 'hcirs-app.information', 'hcirs-app.game-levels', 'hcirs-app.settings', 'hcirs-app.answers'])
 
     .config(function ($ionicCloudProvider) {
         $ionicCloudProvider.init({
@@ -61,6 +61,14 @@ angular
                     'activities': {
                         templateUrl: 'templates/activities.html',
                         controller: 'ActivitiesCtrl'
+                    }
+                },
+                resolve: {
+                    Level: function (Levels) {
+                        return Levels.all();
+                    },
+                    Answer: function (Answers) {
+                        return Answers.everything();
                     }
                 }
             })

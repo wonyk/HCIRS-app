@@ -23,7 +23,6 @@
   <allow-navigation href="http://192.168.1.1:8101"/>
   <allow-navigation href="http://192.168.1.1:8100"/>
   <allow-navigation href="http://192.168.1.5:8100"/>
-  <plugin name="com.verso.cordova.clipboard" spec="https://github.com/VersoSolutions/CordovaClipboard.git"/>
   <plugin name="cordova-sqlite-storage" spec="~2.0.3"/>
   <plugin name="com.unarin.cordova.beacon" spec="~3.4.0"/>
   <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0"/>

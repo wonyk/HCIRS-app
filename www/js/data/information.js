@@ -6,7 +6,7 @@
             var ccas = [
                 {
                     fullname:"Infocomm and Robotics Society",
-                    content:"The Infocomm and Robotics Society is a place where you can create anything you wish and change the world",
+                    content:"The Infocomm and Robotics Society is a place where you can create anything you wish and change the world. {Hc1R5-R0cK5!}",
                     img:"img/ccas/cns/hcirs.jpg",
                     searchtags:"HCIRS Infocomm and Robotics Society Computers Cyber"
                 },
@@ -340,7 +340,7 @@
                 }, {
                     picture: "img/guide/blkD3.jpg",
                     title: "Block D - MACRO building VIEW",
-                    content: "Majestic building that cost millions to build, just to allow students to enjoy good educational facilities - Armed with high tech facilities and tools"
+                    content: "Majestic building that cost millions to build, just to allow students to enjoy good educational facilities {aC0n5-hAv3-FUn-ruNN1} [Part 3] - Armed with high tech facilities and tools"
                 }, {
                     picture: "img/guide/blkD4.jpg",
                     title: "Block D - BIRD's EYES VIEW",
@@ -363,7 +363,7 @@
                 }, {
                     picture: "img/guide/blkA3.jpg",
                     title: "Block A - Class Benches",
-                    content: "Benches for every class to put your stuff and do your work. Cherish it. Don't get it confiscated... 030"
+                    content: "Benches for every class to put your stuff and do your work. Cherish it. {ng-K0n7akt-B3} [Part 2] Don't get it confiscated... 030..."
                 }, {
                     picture: "img/guide/blkA4.jpg",
                     title: "Block A - Reading Room",
@@ -381,8 +381,8 @@
                     content: "A place you will go for consultations with teachers. Most staff rooms are there."
                 }, {
                     picture: "img/guide/blkB2.jpg",
-                    title: "Block B - Lab Lift",
-                    content: "A lift small and strong but not for you and me. It's for lab materials! (Rather lab than us)"
+                    title: "Block B - Banner Drawing Area",
+                    content: "A special location specifically for us to design the beautiful banners that you see everyday"
                 }, {
                     picture: "img/guide/blkB3.jpg",
                     title: "Block B - Art Work",
@@ -394,7 +394,7 @@
                 }, {
                     picture: "img/guide/blkB5.jpg",
                     title: "Block B - Collections of LTs",
-                    content: "Lecture Theatres. A place you will be going often to listen to someone talk for 90 minutes."
+                    content: "Lecture Theatres. {ng-aR0UnD-HwA-cH0N9} [Part 4] A place you will be going often to listen to someone talk for 90 minutes."
                 }]
             }, {
                 location: "blkE",
@@ -409,7 +409,7 @@
                 }, {
                     picture: "img/guide/blkE3.jpg",
                     title: "Block E - Stairs",
-                    content: "Don't get lost."
+                    content: "Don't get lost. {bU1lT-u51} [Part 1]"
                 }, {
                     picture: "img/guide/blkE4.jpg",
                     title: "Block E - Wall of Fame",

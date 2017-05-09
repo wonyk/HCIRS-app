@@ -16,15 +16,15 @@
                     {{details.description}}
                 </p>
             </div>
-            <div class="item item-divider nowrap" style="text-align: center;">
+            <div class="item item-divider nowrap center">
                 Hint: {{details.hint}}
             </div>
         </div>
         <div class="list">
             <label class="item item-input">
-                <input type="text" placeholder="Enter the Flag here">
+                <input type="text" placeholder="Enter the Flag here" ng-model="details.answer">
             </label>
-            <button class="button button-full button-positive" ng-click="submitFlag(details.answer)">Submit</button>
+            <button class="button button-full button-positive" ng-click="submitFlag(details.answer, details.id)">Submit</button>
         </div>
     </ion-content>
 </ion-modal-view>
