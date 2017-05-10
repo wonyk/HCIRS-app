@@ -69,6 +69,9 @@ angular
                     },
                     Answer: function (Answers) {
                         return Answers.everything();
+                    },
+                    currentAuth: function ($firebaseAuth) {
+                        return $firebaseAuth().$requireSignIn();
                     }
                 }
             })
@@ -134,7 +137,7 @@ angular
                 url: '/about',
                 templateUrl: 'templates/about.html'
             })
-            
+
             .state('instructions', {
                 url: '/instructions',
                 templateUrl: 'templates/help.html'

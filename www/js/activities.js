@@ -3,12 +3,21 @@
         .module('hcirs-app')
         .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-    ActivitiesCtrl.$inject = ['$scope', 'Level', '$ionicModal', 'Answer', '$ionicLoading', '$ionicPopup'];
+    ActivitiesCtrl.$inject = ['$scope', 'Level', '$ionicModal', 'Answer', '$ionicLoading', '$ionicPopup', '$cordovaNativeStorage', '$firebaseObject', 'currentAuth'];
 
-    function ActivitiesCtrl($scope, Level, $ionicModal, Answer, $ionicLoading, $ionicPopup) {
+    function ActivitiesCtrl($scope, Level, $ionicModal, Answer, $ionicLoading, $ionicPopup, $cordovaNativeStorage, $firebaseObject, currentAuth) {
+
+        //Ensure the variables are all set up
         $scope.levels = Level;
         $scope.answers = Answer;
+        var ref = firebase.database().ref("users");
+        var user = $firebaseObject(ref.child(currentAuth.uid));
+        user.$loaded()
+            .then(function () {
+                $scope.score = user.score;
+            });
 
+        //Misc functions for css to work: UI improvements
         $scope.toggleLevel = function (level) {
             if ($scope.isLevelShown(level)) {
                 $scope.shownLevel = null;
@@ -38,9 +47,16 @@
             $scope.modal.remove();
         });
 
+
+        //Real JS to check for answers
         $scope.submitFlag = function (answer, id) {
             var flag = $scope.answers[id - 1].flag;
+            var score = $scope.answers[id - 1].score;
             if (answer == flag) {
+                $scope.score = $scope.score + score;
+                user.score = $scope.score;
+                user.$save();
+                
                 $ionicPopup.alert({
                     title: 'Congrats',
                     template: 'You got the {flag} right! Continue striving!'
