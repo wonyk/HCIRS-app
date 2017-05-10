@@ -3,9 +3,9 @@
         .module('hcirs-app')
         .controller('settingsCtrl', settingsCtrl);
 
-    settingsCtrl.$inject = ['$scope', '$firebaseAuth', '$state', 'Settings', '$ionicLoading', '$ionicPopup'];
+    settingsCtrl.$inject = ['$scope', '$firebaseAuth', '$state', 'Settings', '$ionicLoading', '$ionicPopup', '$firebaseObject'];
 
-    function settingsCtrl($scope, $firebaseAuth, $state, Settings, $ionicLoading, $ionicPopup) {
+    function settingsCtrl($scope, $firebaseAuth, $state, Settings, $ionicLoading, $ionicPopup, $firebaseObject) {
         $scope.authObj = $firebaseAuth();
         $scope.user = {};
 
@@ -14,9 +14,15 @@
                 template: '<p>Loading...</p><ion-spinner></ion-spinner>'
             });
             $scope.authObj.$createUserWithEmailAndPassword($scope.user.email, $scope.user.password)
-                .then(function () {
-                    $ionicLoading.hide();
-                    $state.go('^.homePage');
+                .then(function (firebaseUser) {
+                    var ref = firebase.database().ref('users');
+                    $scope.userDetails = $firebaseObject(ref.child(firebaseUser.uid));
+                    $scope.userDetails.name = $scope.user.name;
+                    $scope.userDetails.score = 0;
+                    $scope.userDetails.$save().then(function () {
+                        $ionicLoading.hide();
+                        $state.go('^.homePage');
+                    });
                 }).catch(function (error) {
                     $ionicLoading.hide();
                     $ionicPopup.alert({
