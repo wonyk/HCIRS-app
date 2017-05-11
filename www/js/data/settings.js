@@ -5,8 +5,6 @@
 
             var settings = {
                 'notifications': true,
-                'photos': 0,
-                'name': 'Test'
             };
 
             return {

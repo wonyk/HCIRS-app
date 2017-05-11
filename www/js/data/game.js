@@ -36,7 +36,7 @@
                 }, {
                     name: 'Settings',
                     description: 'Tinker with the settings to get something fun',
-                    hint: 'NOTHING',
+                    hint: 'Just say YES',
                     score: '30',
                     img: 'img/game/ctf.jpg',
                     id: '5'

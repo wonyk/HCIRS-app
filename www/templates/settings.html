@@ -36,27 +36,17 @@
 
                 <li class="item item-icon-left item-toggle">
                     <i class="icon ion-android-notifications"></i> Notifications
-                    <label class="toggle">
-                    <input type="checkbox" ng-checked="settings.notifications">
+                    <label class="toggle" ng-click="toggle()">
+                    <input type="checkbox" ng-checked="notifications">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
                     </label>
                 </li>
-
-                <a class="item item-icon-left" href="#">
-                    <i class="icon ion-images"></i> Photos
-                    <span class="badge badge-assertive">{{settings.photos}}</span>
-                </a>
-
-                <label class="item item-input">
-                    <input type="text" placeholder="First Name" ng-model="settings.name">
-                </label>
-
             </div>
-            <button class="button button-full button-positive" ng-click="authObj.$signOut()">
+            <!--   <button class="button button-full button-positive" ng-click="authObj.$signOut()">
               Sign out..
-            </button>
+            </button> -->
         </div>
     </ion-content>
 </ion-view>
