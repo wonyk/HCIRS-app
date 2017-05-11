@@ -15,8 +15,8 @@
             });
             $scope.authObj.$createUserWithEmailAndPassword($scope.user.email, $scope.user.password)
                 .then(function (firebaseUser) {
-                    var ref = firebase.database().ref('users');
-                    $scope.userDetails = $firebaseObject(ref.child(firebaseUser.uid));
+                    var ref = firebase.database().ref(firebaseUser.uid);
+                    $scope.userDetails = $firebaseObject(ref.child('details'));
                     $scope.userDetails.name = $scope.user.name;
                     $scope.userDetails.score = 0;
                     $scope.userDetails.$save().then(function () {

@@ -3,20 +3,17 @@
         .module('hcirs-app')
         .controller('ActivitiesCtrl', ActivitiesCtrl);
 
-    ActivitiesCtrl.$inject = ['$scope', 'Level', '$ionicModal', 'Answer', '$ionicLoading', '$ionicPopup', '$cordovaNativeStorage', '$firebaseObject', 'currentAuth'];
+    ActivitiesCtrl.$inject = ['$scope', 'Level', '$ionicModal', 'Answer', '$ionicLoading', '$ionicPopup', '$firebaseObject', 'currentAuth'];
 
-    function ActivitiesCtrl($scope, Level, $ionicModal, Answer, $ionicLoading, $ionicPopup, $cordovaNativeStorage, $firebaseObject, currentAuth) {
+    function ActivitiesCtrl($scope, Level, $ionicModal, Answer, $ionicLoading, $ionicPopup, $firebaseObject, currentAuth) {
 
         //Ensure the variables are all set up
         $scope.levels = Level;
         $scope.answers = Answer;
-        var ref = firebase.database().ref("users");
-        var user = $firebaseObject(ref.child(currentAuth.uid));
-        user.$loaded()
-            .then(function () {
-                $scope.score = user.score;
-            });
-
+        //Config AngularFire
+        var ref = firebase.database().ref(currentAuth.uid);
+        $scope.user = $firebaseObject(ref.child('details'));
+        $scope.completed = $firebaseObject(ref.child('questions'));
         //Misc functions for css to work: UI improvements
         $scope.toggleLevel = function (level) {
             if ($scope.isLevelShown(level)) {
@@ -53,10 +50,14 @@
             var flag = $scope.answers[id - 1].flag;
             var score = $scope.answers[id - 1].score;
             if (answer == flag) {
-                $scope.score = $scope.score + score;
-                user.score = $scope.score;
-                user.$save();
-                
+                //Firebase Score
+                if ($scope.completed[id] !== 'yes') {
+                    $scope.user.score += score;
+                    $scope.user.$save();
+                    //Firebase Questions
+                    $scope.completed[id] = 'yes';
+                    $scope.completed.$save();
+                }
                 $ionicPopup.alert({
                     title: 'Congrats',
                     template: 'You got the {flag} right! Continue striving!'

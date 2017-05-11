@@ -21,7 +21,7 @@
                         title: 'Sign up',
                         template: 'Sign up to play!'
                     });
-                    $state.go("tab.settings");
+                    $state.go("^.settings");
                 }
             });
 

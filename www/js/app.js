@@ -72,6 +72,25 @@ angular
                     },
                     currentAuth: function ($firebaseAuth) {
                         return $firebaseAuth().$requireSignIn();
+                    },
+                    Internet: function ($cordovaNetwork, $ionicPopup, $state, $location) {
+                        $cordovaNetwork.onDisconnect().subscribe(function () {
+                            $ionicPopup.alert({
+                                title: 'No Network',
+                                template: 'You ain\'t playing the game without internet'
+                            }).then(function () {
+                                $state.go('^.homePage');
+                            });
+                        });
+                        
+                        if ($cordovaNetwork.type == 'none') {
+                            $ionicPopup.alert({
+                                title: 'No Network',
+                                template: 'You ain\'t playing the game without internet'
+                            }).then(function () {
+                                $state.go('^.homePage');
+                            });
+                        }
                     }
                 }
             })
