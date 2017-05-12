@@ -3,9 +3,9 @@
         .module('hcirs-app')
         .controller('guideCtrl', guideCtrl);
 
-    guideCtrl.$inject = ['$scope', '$cordovaIBeacon', '$ionicLoading', '$ionicPopup', '$ionicModal', '$ionicScrollDelegate', 'Information', '$cordovaLocationAccuracy'];
+    guideCtrl.$inject = ['$scope', '$cordovaIBeacon', '$ionicLoading', '$ionicPopup', '$ionicModal', '$ionicScrollDelegate', 'Information'];
 
-    function guideCtrl($scope, $cordovaIBeacon, $ionicLoading, $ionicPopup, $ionicModal, $ionicScrollDelegate, Information, $cordovaLocationAccuracy) {
+    function guideCtrl($scope, $cordovaIBeacon, $ionicLoading, $ionicPopup, $ionicModal, $ionicScrollDelegate, Information) {
         //For Misc functions
         $scope.zoomLimit = 0;
         $scope.options = {
@@ -62,20 +62,10 @@
         $scope.started = false;
         $scope.location = Information.guide();
         //This function is crazily coded
+
+        //Check location settings
         $scope.startGuide = function () {
-
-            //Check location settings
-            $cordovaLocationAccuracy.request('3')
-                .then(function (data, err) {
-                    $scope.started = true;
-                    if (err) {
-                        $ionicPopup.alert({
-                            title: 'Error',
-                            template: 'Try again'
-                        });
-                    }
-                });
-
+            $scope.started = true;
 
             $cordovaIBeacon.requestAlwaysAuthorization(); //For ios Only... Android using another plugin..
             var BlockA = $cordovaIBeacon.BeaconRegion('BlockA', 'f7826da6-4fa2-4e98-8024-bc5b71e0893e', '8888', '2222'); //Cloud
@@ -85,7 +75,6 @@
 
             // Beacon delegate controller
             var delegate = $cordovaIBeacon.Delegate();
-            $cordovaIBeacon.enableDebugLogs();
             //Enable BT automatically
             $cordovaIBeacon.isBluetoothEnabled()
                 .then(function (isEnabled) {

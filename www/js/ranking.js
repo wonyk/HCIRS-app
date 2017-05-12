@@ -3,9 +3,9 @@
         .module('hcirs-app')
         .controller('rankCtrl', rankCtrl);
 
-    rankCtrl.$inject = ['$scope', '$state', '$ionicLoading', '$firebaseObject'];
+    rankCtrl.$inject = ['$scope', '$state', '$ionicLoading', '$firebaseObject', '$cordovaNetwork', '$ionicPopup'];
 
-    function rankCtrl($scope, $state, $ionicLoading, $firebaseObject) {
+    function rankCtrl($scope, $state, $ionicLoading, $firebaseObject, $cordovaNetwork, $ionicPopup) {
         $ionicLoading.show({
             template: '<p>Loading...</p><ion-spinner></ion-spinner>'
         });
@@ -28,6 +28,26 @@
         $scope.refresh = function () {
             getPlayerScore();
         };
+
+        $cordovaNetwork.onDisconnect().subscribe(function () {
+            $ionicLoading.hide();
+            $ionicPopup.alert({
+                title: 'No Network',
+                template: 'You ain\'t playing the game without internet'
+            }).then(function () {
+                $state.go('tab.homePage');
+            });
+        });
+
+        if ($cordovaNetwork.type == 'none') {
+            $ionicLoading.hide();
+            $ionicPopup.alert({
+                title: 'No Network',
+                template: 'You ain\'t playing the game without internet'
+            }).then(function () {
+                $state.go('tab.homePage');
+            });
+        }
     }
 
 
