@@ -160,6 +160,12 @@ angular
             .state('instructions', {
                 url: '/instructions',
                 templateUrl: 'templates/help.html'
+            })
+            
+            .state('leaderboard', {
+                url: '/ranking',
+                templateUrl: 'templates/ranking.html',
+                controller: 'rankCtrl'
             });
 
         $urlRouterProvider.otherwise('/');
