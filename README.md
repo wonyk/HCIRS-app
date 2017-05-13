@@ -12,7 +12,7 @@ This [`HCIRS-app`](https://github.com/wonyk/HCIRS-app) repo is where we do devel
 
 If you are interested in contributing to this project, I would review the contributions on a person-to-person basis.
 The typical reply would be that I would only accept small contributions as I would like to keep this project as a mostly personal project.
-Should you still wish to contribute, you may follow the steps under [Installations](https://github.com/wonyk/HCIRS-app/#Installations)
+Should you still wish to contribute, you may follow the steps under [Installations](https://github.com/wonyk/HCIRS-app/#installations)
 
 ## Installations
 
