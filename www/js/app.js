@@ -40,7 +40,6 @@ angular
                 views: {
                     'homePage': {
                         templateUrl: 'templates/home.html',
-                        controller: 'HomeCtrl'
                     }
                 }
             })
@@ -149,7 +148,7 @@ angular
             .state('guide', {
                 url: '/guide',
                 templateUrl: 'templates/guide.html',
-                controller: 'guideCtrl' //in misc
+                controller: 'guideCtrl'
             })
 
             .state('credits', {

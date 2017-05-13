@@ -13,41 +13,43 @@
         var players = $firebaseObject(ref);
 
         var getPlayerScore = function () {
-            $scope.players = [];
-            players.$loaded().then(function () {
-                angular.forEach(players, function (value, key) {
-                    $scope.players.push(value.details);
-                });
+            if ($cordovaNetwork.type == 'none') {
                 $scope.$broadcast('scroll.refreshComplete');
-                $ionicLoading.hide();
-            });
+                $ionicPopup.alert({
+                    title: 'No Network',
+                    template: 'You ain\'t checking the score without internet'
+                }).then(function () {
+                    $state.go('tab.homePage');
+                });
+            } else {
+                $scope.players = [];
+                players.$loaded().then(function () {
+                    angular.forEach(players, function (value, key) {
+                        $scope.players.push(value.details);
+                    });
+                    $scope.$broadcast('scroll.refreshComplete');
+                    $ionicLoading.hide();
+                });
+            }
         };
 
+        //Get player score
         getPlayerScore();
-
+        //Refresh function
         $scope.refresh = function () {
             getPlayerScore();
         };
 
         $cordovaNetwork.onDisconnect().subscribe(function () {
+            $scope.$broadcast('scroll.refreshComplete');
             $ionicLoading.hide();
             $ionicPopup.alert({
                 title: 'No Network',
-                template: 'You ain\'t playing the game without internet'
+                template: 'You ain\'t checking the score without internet'
             }).then(function () {
                 $state.go('tab.homePage');
             });
         });
-
-        if ($cordovaNetwork.type == 'none') {
-            $ionicLoading.hide();
-            $ionicPopup.alert({
-                title: 'No Network',
-                template: 'You ain\'t playing the game without internet'
-            }).then(function () {
-                $state.go('tab.homePage');
-            });
-        }
     }
 
 

@@ -415,7 +415,7 @@
                     title: "Block E - Wall of Fame",
                     content: "A wall containing successful Hwa Chong students. I hope to see your face there in the future"
                 }]
-            }]
+            }];
 
 
 

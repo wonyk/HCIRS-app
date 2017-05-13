@@ -26,6 +26,7 @@
     <!-- ionic/angularjs js and also firebase -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic/js/ionic.native.js"></script>
+    <script src="lib/ionic/js/ocLazyLoad.min.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
     <script src="lib/ionic/js/ionic.cloud.min.js"></script>
@@ -50,7 +51,6 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/activities.js"></script>
-    <script src="js/home.js"></script>
     <script src="js/login.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/CCA.js"></script>
@@ -62,7 +62,6 @@
     <script src="js/data/information.js"></script>
     <script src="js/data/game.js"></script>
     <script src="js/data/answers.js"></script>
-    <script src="js/data/settings.js"></script>
 </head>
 
 <body ng-app="hcirs-app">
@@ -77,17 +76,17 @@
             <ion-content class="has-header">
                 <ion-list>
                     <ion-item class="item item-divider">Main</ion-item>
-                    <ion-item class="item item-icon-left" href="#/activities" menu-close><i class="icon ion-flag"></i>Capture the {Flag}</ion-item>
-                    <ion-item class="item item-icon-left" href="#/schedule" menu-close><i class="icon ion-calendar"></i>Activities / Schedule</ion-item>
-                    <ion-item class="item item-icon-left" href="#/ranking" menu-close><i class="icon ion-ribbon-b"></i>Rankings</ion-item>
-                    <ion-item class="item item-icon-left" href="#/guide" menu-close><i class="icon ion-ios-navigate"></i>Tour Guide</ion-item>
-                    <ion-item class="item item-icon-left" href="#/information/main" menu-close><i class="icon ion-ios-information"></i>Information</ion-item>
+                    <ion-item class="item item-icon-left" href="#/activities" menu-close=""><i class="icon ion-flag"></i>Capture the {Flag}</ion-item>
+                    <ion-item class="item item-icon-left" href="#/schedule" menu-close=""><i class="icon ion-calendar"></i>Activities / Schedule</ion-item>
+                    <ion-item class="item item-icon-left" href="#/ranking" menu-close=""><i class="icon ion-ribbon-b"></i>Rankings</ion-item>
+                    <ion-item class="item item-icon-left" href="#/guide" menu-close=""><i class="icon ion-ios-navigate"></i>Tour Guide</ion-item>
+                    <ion-item class="item item-icon-left" href="#/information/main" menu-close=""><i class="icon ion-ios-information"></i>Information</ion-item>
                     <ion-item class="item item-divider">Utility</ion-item>
-                    <ion-item class="item item-icon-left" href="#/settings" menu-close><i class="icon ion-gear-a"></i>Settings</ion-item>
-                    <ion-item class="item item-icon-left" href="#/map" menu-close><i class="icon ion-navigate"></i>Visit Hwa Chong</ion-item>
+                    <ion-item class="item item-icon-left" href="#/settings" menu-close=""><i class="icon ion-gear-a"></i>Settings</ion-item>
+                    <ion-item class="item item-icon-left" href="#/map" menu-close=""><i class="icon ion-navigate"></i>Visit Hwa Chong</ion-item>
                     <ion-item class="item item-divider">Others</ion-item>
-                    <ion-item class="item item-icon-left" href="#/about" menu-close><i class="icon ion-trophy"></i>About</ion-item>
-                    <ion-item class="item item-icon-left" href="#/instructions" menu-close><i class="icon ion-help"></i>Instructions</ion-item>
+                    <ion-item class="item item-icon-left" href="#/about" menu-close=""><i class="icon ion-trophy"></i>About</ion-item>
+                    <ion-item class="item item-icon-left" href="#/instructions" menu-close=""><i class="icon ion-help"></i>Instructions</ion-item>
                 </ion-list>
             </ion-content>
         </ion-side-menu>
