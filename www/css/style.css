@@ -99,7 +99,7 @@ h5 {
 }
 
 .credits {
-    background-image: url('/img/misc/code.png');
+    background-image: url('../img/misc/code.png');
     background-size: cover;
 }
 
