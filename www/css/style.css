@@ -121,3 +121,8 @@ h5 {
 .dark {
     background: #444;
 }
+
+.network {
+    position: absolute;
+    top: 80%;
+}

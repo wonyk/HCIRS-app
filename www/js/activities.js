@@ -15,7 +15,7 @@
         var ref = firebase.database().ref(currentAuth.uid);
         $scope.user = $firebaseObject(ref.child('details'));
         $scope.completed = $firebaseObject(ref.child('questions'));
-        
+
         //Misc functions for css to work: UI improvements
         $scope.toggleLevel = function (level) {
             if ($scope.isLevelShown(level)) {

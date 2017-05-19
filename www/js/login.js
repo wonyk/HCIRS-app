@@ -10,7 +10,7 @@
         $scope.user = {};
         $scope.login = function () {
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.user.password)
-                .then(function (firebaseUser) {
+                .then(function () {
                     $state.go('tab.homePage');
                 }).catch(function (error) {
                     $ionicPopup.alert({

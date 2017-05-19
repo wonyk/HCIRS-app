@@ -1,6 +1,6 @@
 <ion-view view-title="Capture the {FLAGS}">
     <ion-content>
-        <ion-list>
+        <ion-list ng-if="network">
             <a class="item item-icon-left" ui-sref="leaderboard">
                 <i class="icon ion-android-clipboard"></i> Score
                 <span class="item-note">
@@ -17,5 +17,8 @@
                 </ion-item>
             </div>
         </ion-list>
+        <div ng-if="!network">
+            Hello;
+        </div>
     </ion-content>
 </ion-view>

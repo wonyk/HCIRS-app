@@ -10,14 +10,11 @@ angular
     })
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 cordova.plugins.Keyboard.disableScroll(true);
             }
             if (window.StatusBar) {
-                // org.apache.cordova.statusbar required
                 StatusBar.overlaysWebView(false);
                 StatusBar.backgroundColorByHexString('#3b6cbe');
             }
@@ -72,25 +69,28 @@ angular
                     currentAuth: function ($firebaseAuth) {
                         return $firebaseAuth().$requireSignIn();
                     },
-                    Internet: function ($cordovaNetwork, $ionicPopup, $state) {
-                        $cordovaNetwork.onDisconnect().subscribe(function () {
-                            $ionicPopup.alert({
-                                title: 'No Network',
-                                template: 'You ain\'t playing the game without internet'
-                            }).then(function () {
-                                $state.go('^.homePage');
-                            });
-                        });
+                    /*     Internet: function ($cordovaNetwork, $ionicPopup, $state) {
+                             $cordovaNetwork.onDisconnect().subscribe(function () {
+                                 /*   $ionicPopup.alert({
+                                        title: 'No Network',
+                                        template: 'You ain\'t playing the game without internet'
+                                    }).then(function () {
+                                        $state.go('^.homePage');
+                                    }); 
+                                 return false;
+                             });
 
-                        if ($cordovaNetwork.type == 'none') {
-                            $ionicPopup.alert({
-                                title: 'No Network',
-                                template: 'You ain\'t playing the game without internet'
-                            }).then(function () {
-                                $state.go('^.homePage');
-                            });
-                        }
-                    }
+                             if ($cordovaNetwork.type == 'none') {
+                                 /*$ionicPopup.alert({
+                                     title: 'No Network',
+                                     template: 'You ain\'t playing the game without internet'
+                                 }).then(function () {
+                                     $state.go('^.homePage');
+                                 }); 
+                                 return false;
+                             }
+                             return true;
+                         } */
                 }
             })
 
@@ -159,6 +159,11 @@ angular
             .state('instructions', {
                 url: '/instructions',
                 templateUrl: 'templates/help.html'
+            })
+
+            .state('network', {
+                url: '/network',
+                templateUrl: 'templates/network.html'
             })
 
             .state('leaderboard', {

@@ -22,7 +22,7 @@
                     $scope.userDetails.score = 0;
                     $scope.userDetails.$save().then(function () {
                         $ionicLoading.hide();
-                        $state.go('^.homePage');
+                        $state.go('tab.homePage');
                     });
                 }).catch(function (error) {
                     $ionicLoading.hide();
