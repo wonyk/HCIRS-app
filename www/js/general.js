@@ -20,12 +20,15 @@
                 });
 
             $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
-                if (error === "AUTH_REQUIRED") {
+                if (error === "AUTH_REQUIRED" && fromState.url != '/settings') {
                     $ionicPopup.alert({
                         title: 'Sign up',
                         template: 'Sign up to play!'
                     });
                     $state.go("tab.settings");
+                }
+                if (fromState.url == '/settings') {
+                    $state.reload('tab.settings');
                 }
             });
 
