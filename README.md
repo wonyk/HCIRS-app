@@ -38,7 +38,7 @@ Quoted from Ionic website:
 
 ios is not available as I do not have an apple developer account... However, HCIRS used to have subscribed. You can try your luck.
 
-[Download link for Android apps](https://drive.google.com/open?id=0B8AVt25raodmZEYwVGtra2hXa0U)
+[Download link for Android apps](https://drive.google.com/drive/folders/0B8AVt25raodmeEU1cnFObkdYbGM?usp=sharing)
 ## Credits and Licence
 
 Copyright (c) Won Ying Keat
