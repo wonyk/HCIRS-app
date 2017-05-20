@@ -25,11 +25,6 @@
   <allow-navigation href="http://192.168.1.1:8100"/>
   <allow-navigation href="http://192.168.1.5:8100"/>
   <allow-navigation href="http://192.168.1.7:8100"/>
-  <plugin name="com.unarin.cordova.beacon" spec="~3.4.0"/>
-  <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0"/>
-  <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.4"/>
-  <plugin name="cordova-plugin-request-location-accuracy" spec="~2.2.1"/>
-  <plugin name="cordova-plugin-console" spec="~1.0.7"/>
   <platform name="android">
     <icon density="ldpi" src="resources\android\icon\drawable-ldpi-icon.png"/>
     <icon density="mdpi" src="resources\android\icon\drawable-mdpi-icon.png"/>
@@ -86,4 +81,9 @@
     <splash height="1280" src="resources\wp8\splash\SplashScreenImage.png" width="768"/>
   </platform>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+  <plugin name="com.unarin.cordova.beacon" spec="~3.4.0"/>
+  <plugin name="cordova-plugin-android-permissions" spec="^0.11.0"/>
+  <plugin name="cordova-plugin-console" spec="~1.0.7"/>
+  <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0"/>
+  <plugin name="cordova-plugin-request-location-accuracy" spec="~2.2.1"/>
 </widget>

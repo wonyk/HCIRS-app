@@ -13,6 +13,14 @@ angular
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 cordova.plugins.Keyboard.disableScroll(true);
+                if (ionic.Platform.isAndroid()) {
+                    var permissions = cordova.plugins.permissions;
+                    permissions.checkPermission(permissions.ACCESS_COARSE_LOCATION, function (status) {
+                        if (status.hasPermission == false) {
+                            permissions.requestPermission(permissions.ACCESS_COARSE_LOCATION);
+                        }
+                    });
+                }
             }
             if (window.StatusBar) {
                 StatusBar.overlaysWebView(false);

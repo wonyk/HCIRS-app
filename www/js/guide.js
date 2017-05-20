@@ -3,15 +3,15 @@
         .module('hcirs-app')
         .controller('guideCtrl', guideCtrl);
 
-    guideCtrl.$inject = ['$scope', '$cordovaIBeacon', '$ionicLoading', '$ionicPopup', '$ionicModal', '$ionicScrollDelegate', 'Information'];
+    guideCtrl.$inject = ['$scope', '$cordovaIBeacon', '$ionicLoading', '$ionicPopup', '$ionicModal', '$ionicScrollDelegate', 'Information', '$cordovaLocationAccuracy'];
 
-    function guideCtrl($scope, $cordovaIBeacon, $ionicLoading, $ionicPopup, $ionicModal, $ionicScrollDelegate, Information) {
+    function guideCtrl($scope, $cordovaIBeacon, $ionicLoading, $ionicPopup, $ionicModal, $ionicScrollDelegate, Information, $cordovaLocationAccuracy) {
         //For Misc functions
         $scope.zoomLimit = 0;
         $scope.options = {
             initialSlide: 0,
             loop: true,
-            autoplay: 15000,
+            autoplay: 5000,
             autoplayDisableOnInteraction: false,
             effect: 'slide',
         };
@@ -61,12 +61,22 @@
         // Real beacon stuff and controllers
         $scope.started = false;
         $scope.location = Information.guide();
+        $scope.locs = null; //Initial state
         //This function is crazily coded
 
         //Check location settings
+        //Start Guide
         $scope.startGuide = function () {
-            $scope.started = true;
+            $cordovaLocationAccuracy.request(2).then(function (status) {
+                if (status) {
+                    $scope.started = true;
+                    runBeacon();
+                }
+            });
+        };
+        //runBeacon function
 
+        var runBeacon = function () {
             $cordovaIBeacon.requestAlwaysAuthorization(); //For ios Only... Android using another plugin..
             var BlockA = $cordovaIBeacon.BeaconRegion('BlockA', 'f7826da6-4fa2-4e98-8024-bc5b71e0893e', '8888', '2222'); //Cloud
             var BlockB = $cordovaIBeacon.BeaconRegion('BlockB', 'f7826da6-4fa2-4e98-8024-bc5b71e0893e', '8888', '49717'); //7rsV
@@ -83,7 +93,7 @@
                     }
                 });
 
-            $scope.locs = null; //Initial state
+
 
             //Monitor for each region. If enter, call the delegate function
             $cordovaIBeacon.startMonitoringForRegion(BlockCD)
@@ -159,10 +169,6 @@
 
             delegate.didExitRegion()
                 .subscribe(function (data, error) {
-                    if (data) {
-                        $scope.locs = null;
-                        $scope.$apply();
-                    }
                     if (error) {
                         $ionicPopup.alert({
                             title: 'Error',
@@ -171,6 +177,7 @@
                     }
                 });
         };
+
 
         //Reset button at the bottom. Click to end all monitoring.
 
